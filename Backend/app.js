@@ -1,19 +1,24 @@
 const express = require('express')
-login = require('./routes/logreg')
+const login = require(`./routes/logreg`)
 const mongoose = require('mongoose')
 
 app = express()
 app.use(express.static(`../frontend/`));
-
-const uri = process.env.ATLAS_URI
-mongoose.connect(uri, {usenewUrlParser: true, useCreateIndex : true})
+app.use(express.urlencoded({extended:false}));
+app.use(express.json)
+app.use('/login', login)
+const uri = `mongodb://127.0.0.1:27017`;
+mongoose.connect(uri, {usenewUrlParser: true})
 const connection = mongoose.connection
 connection.once('open', ()=>
 {
     console.log(`MongoDB connected successfully`)
 })
-app.use('\login', login);
 
+app.get('/', (req, res)=>
+{
+    res.status(200).send(`Home`);
+})
 
 
 app.listen(5000, ()=>{
