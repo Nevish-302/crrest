@@ -20,8 +20,11 @@ const Header = (props) => {
         <li className='navbar-list-items' id='contactbutton'>
           <Link to="/Contact" className={({ isActive }) => (isActive ? "link-active" : "link")}>Contacts</Link>
         </li> 
-        <li className='navbar-list-items' id='blogsbutton'>
-          <Link to="/Blog" className={({ isActive }) => (isActive ? "link-active" : "link")}>Blog</Link>
+        <li className='navbar-list-items' id='signinbutton'>
+          <Link to="/SignIn" className={({ isActive }) => (isActive ? "link-active" : "link")}>SignIn</Link>
+        </li> 
+        <li className='navbar-list-items' id='signupbutton'>
+          <Link to="/SignUp" className={({ isActive }) => (isActive ? "link-active" : "link")}>SignUp</Link>
         </li>           
         </ul>
       </div>
