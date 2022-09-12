@@ -2,9 +2,8 @@
 const Howto = () => {
   return (
     <div>
-        <h1>
-            HOWTO
-        </h1>
+      <div className="home-background-animation-1"></div>
+      <div className="home-background-animation-2"></div>
     </div>
   )
 }

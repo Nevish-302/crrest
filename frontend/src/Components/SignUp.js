@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Header from './Header';
+
 
 
 
@@ -40,7 +40,7 @@ const SignUp = () => {
 
     return (
         <>
-            <Header />
+            
             <div className="signup_crrest">
                 <h2>crrest</h2>
             </div>
