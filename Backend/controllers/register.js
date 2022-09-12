@@ -24,5 +24,7 @@ const register = (req, res) => {
     })
     
 }
-
-module.exports = register
+const registerpage = (req, res) => {
+    res.status(200).send('Home');
+}
+module.exports = {register, registerpage}
