@@ -1,93 +1,96 @@
 import React, { useState } from 'react';
+import Header from './Header';
 
 
-const Access = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confPassword, setConfPassword] = useState('');
 
-  const handleChange = (e) => {
-    setName(e.target.value);
-  }
+const SignUp = () => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confPassword, setConfPassword] = useState('');
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  }
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  }
-
-  const handleConfPasswordChange = (e) => {
-    setConfPassword(e.target.value);
-  }
-
-  const handleSubmit = (e) => {
-    if (password !== confPassword) {
-
-      alert("Password did not Match");
+    const handleChange = (e) => {
+        setName(e.target.value);
     }
-    else {
 
-      alert('A form was submitted with Name :"' + name + '"  and Email :"' + email + '"');
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value);
     }
-    e.preventDefault();
 
-  }
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value);
+    }
 
-  return (
-    <>
-      <div className="signup_crrest">
-        <h2>crrest</h2>
-      </div>
-      <div className='access_background'>
+    const handleConfPasswordChange = (e) => {
+        setConfPassword(e.target.value);
+    }
 
-        <div className="home-background-animation-1"></div>
-        <div className="home-background-animation-2"></div>
+    const handleSubmit = (e) => {
+        if (password !== confPassword) {
 
-        <div className="signup_dashboard">
-          <div className="crrest_signup_about">
-            <h1>
-              crrest
-            </h1>
-          </div>
+            alert("Password did not Match");
+        }
+        else {
 
-          <div className="access">
-            <header className="App-header">
-              <form onSubmit={(e) => { handleSubmit(e) }}>
+            alert('A form was submitted with Name :"' + name + '"  and Email :"' + email + '"');
+        }
+        e.preventDefault();
 
-                <div className="main_access">
-                  <div className="register_navbar input_size">
-                    <h3 className='top_sign' id='top_signup'> SignUp </h3>
+    }
 
-                  </div>
+    return (
+        <>
+            <Header />
+            <div className="signup_crrest">
+                <h2>crrest</h2>
+            </div>
+            <div className='access_background'>
 
-                  <div className="inputs_signup">
-                    <input className='input_size' type="text" value={name} placeholder="username" required onChange={(e) => { handleChange(e) }} /><br />
+                <div className="home-background-animation-1"></div>
+                <div className="home-background-animation-2"></div>
+
+                <div className="signup_dashboard">
+                    <div className="crrest_signup_about">
+                        <h1>
+                            crrest
+                        </h1>
+                    </div>
+
+                    <div className="access">
+                        <header className="App-header">
+                            <form onSubmit={(e) => { handleSubmit(e) }}>
+
+                                <div className="main_access">
+                                    <div className="register_navbar input_size">
+                                        <h3 className='top_sign' id='top_signup'> SignUp </h3>
+
+                                    </div>
+
+                                    <div className="inputs_signup">
+                                        <input className='input_size' type="text" value={name} placeholder="username" required onChange={(e) => { handleChange(e) }} /><br />
 
 
-                    <input className='input_size' type="email" value={email} placeholder="Email id" required onChange={(e) => { handleEmailChange(e) }} /><br />
+                                        <input className='input_size' type="email" value={email} placeholder="Email id" required onChange={(e) => { handleEmailChange(e) }} /><br />
 
 
-                    <input className='input_size' type="password" value={password} placeholder="Password" required onChange={(e) => { handlePasswordChange(e) }} /><br />
+                                        <input className='input_size' type="password" value={password} placeholder="Password" required onChange={(e) => { handlePasswordChange(e) }} /><br />
 
 
-                    <input className='input_size' type="password" value={confPassword} placeholder="Confirm Password" required onChange={(e) => { handleConfPasswordChange(e) }} /><br />
+                                        <input className='input_size' type="password" value={confPassword} placeholder="Confirm Password" required onChange={(e) => { handleConfPasswordChange(e) }} /><br />
 
-                    <input id="submit" type="submit" value="Submit" />
-                  </div>
+                                        <input id="submit" type="submit" value="Submit" />
+                                    </div>
+                                </div>
+
+
+                            </form>
+                        </header>
+                    </div>
                 </div>
 
-
-              </form>
-            </header>
-          </div>
-        </div>
-
-      </div>
-    </>
-  )
+            </div>
+        </>
+    )
 }
 
-export default Access
+export default SignUp

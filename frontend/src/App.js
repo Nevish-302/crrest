@@ -23,7 +23,6 @@ function App() {
           <Route path="/Contact" element={<Contact/>} />
           <Route path="/SignIn" element={<SignIn/>} />
           <Route path="/SignUp" element={<SignUp/>} />
-
         </Routes>
       </Router>
     </div>
