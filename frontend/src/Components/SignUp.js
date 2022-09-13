@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Footer from '../Footer';
 
 
 
@@ -89,6 +90,7 @@ const SignUp = () => {
                 </div>
 
             </div>
+            <Footer/>
         </>
     )
 }

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Footer from "../Footer";
 import Header from "./Header";
 
 
@@ -14,6 +15,8 @@ const SignIn = (props) => {
     return (
         <>
             <Header />
+            <div className="home-background-animation-1"></div>
+            <div className="home-background-animation-2"></div>
             <div className="login">
                 <h3>Login</h3>
                 <form onSubmit={handleSubmit}>
@@ -37,9 +40,10 @@ const SignIn = (props) => {
                     </div>
                 </form>
                 <div className="new_user">
-                    <p>New User? SignUp</p>
+                    <p>New User? <h4> SignUp</h4></p>
                 </div>
             </div>
+            <Footer />
         </>
     );
 }

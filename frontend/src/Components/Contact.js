@@ -1,9 +1,12 @@
+import Footer from "../Footer"
 import Header from "./Header"
 
 const Contact = () => {
   return (
     <>
       <Header />
+      <div className="home-background-animation-1"></div>
+      <div className="home-background-animation-2"></div>
       <div className="contact">
         <div className="akash_yadav">
           <div className="text_contact">
@@ -36,6 +39,7 @@ const Contact = () => {
           <img src="///" alt="Shiven Upadhayay" />
         </div>
       </div>
+      <Footer />
     </>
   )
 }

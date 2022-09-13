@@ -15,20 +15,23 @@
     padding-top: 10px;
     padding-right: 10vh;
     padding-bottom: 2vh;
-    background-color: rgb(28, 32, 39);
+    background-color: rgb(93, 3, 106);
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    color: rgb(200, 200, 200);
+    color: rgb(230, 230, 230);
 
     a {
-        color: rgb(180, 180, 180);
+        color: rgb(240, 240, 240);
         text-decoration: none;
+        padding: 5px;
 
     }
 
     a:hover {
-        color: white;
+        color: rgb(255, 255, 255);
         font-weight: 450;
+        border-radius: 5px;
+        background-color: rgb(184, 40, 206);
     }
 
     .name {
@@ -63,17 +66,16 @@
 ////////////////////////        Contacts          ///////////////////////////////////////////////
 .contact {
     width: 100%;
-    height: 645px;
-    background-color: rgb(53, 68, 93);
+    height: 500px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 
     h3 {
-        color: rgb(219, 161, 60);
+        color: rgb(143, 6, 74);
     }
 
     p {
-        color: rgb(255, 255, 255);
+        color: rgb(69, 6, 61);
         font-weight: bold;
     }
 
@@ -130,11 +132,11 @@
 .login {
     position: relative;
     top: 50px;
-    left: 500px;
+    left: 550px;
     width: 400px;
     height: 400px;
-    background-color: rgb(240, 240, 240);
-    border: 2px solid gray;
+    background-color: rgb(244, 230, 251);
+    border: 2px solid rgb(164, 70, 211);
     border-radius: 4px;
     display: grid;
     grid-template-rows: repeat(8, 1fr);
@@ -159,7 +161,7 @@
         button {
             height: 40px;
             width: 230px;
-            background-color: rgb(57, 57, 149);
+            background-color: rgb(128, 41, 172);
             color: white;
             font-weight: bold;
             font-size: 1.05rem;
@@ -174,7 +176,7 @@
         width: 220px;
         outline: none;
         margin-bottom: 25px;
-        border: 1px solid gray;
+        border: 1px solid rgb(200, 126, 236);
         border-radius: 3px;
         padding-left: 10px;
         font-weight: bold;
@@ -185,6 +187,15 @@
         grid-row: 7/9;
         justify-content: center;
         align-items: center;
+
+        p {
+            display: flex;
+
+            h4 {
+                color: rgb(117, 33, 159);
+                padding-left: 5px;
+            }
+        }
     }
 }
 
@@ -192,7 +203,7 @@
 .signup_crrest {
     width: 100%;
     height: 50px;
-    background-color: rgba(29, 58, 70, 0.65);
+    background-color: rgb(135, 13, 154);
     display: grid;
     color: white;
 
@@ -202,20 +213,22 @@
         align-items: center;
     }
 }
-.home-background-animation-1{
+
+.home-background-animation-1 {
     width: 400px;
     height: 600px;
     background-color: rgb(200, 126, 236);
     position: fixed;
     transform: rotate(-60deg);
-    left:450px;
+    left: 450px;
     top: -50px;
     border: 150px solid rgb(215, 155, 246);
     z-index: -1;
 }
-.home-background-animation-2{
+
+.home-background-animation-2 {
     width: 1000px;
-    height: 1200px;    
+    height: 1200px;
     background-color: rgb(221, 179, 242);
     position: fixed;
     transform: rotate(-60deg);
@@ -227,8 +240,8 @@
 }
 
 .access_background {
-    
 
+    
     .signup_dashboard {
         width: 1000px;
         height: 550px;
@@ -240,37 +253,48 @@
         border-radius: 5px;
         z-index: 2;
         display: grid;
-        grid-template-columns: repeat(2,1fr);
-        .crrest_signup_about{
+        grid-template-columns: repeat(2, 1fr);
+
+        .crrest_signup_about {
             display: grid;
             justify-content: center;
             align-items: center;
         }
-        .access{
+
+        .access {
             display: grid;
             justify-content: center;
             align-items: center;
-            .main_access{
+
+            .main_access {
                 position: relative;
                 height: 500px;
                 width: 400px;
-                border: 2px solid rgb(234, 244, 234);
+                background-color: rgb(228, 228, 228);
+                border: 2px solid rgb(255, 255, 255);
                 display: grid;
-                grid-template-rows: repeat(9,1fr);
-                .register_navbar{
+                grid-template-rows: repeat(9, 1fr);
+
+                .register_navbar {
                     display: grid;
                     grid-row: 1/3;
                     justify-content: center;
                     align-items: center;
+
+                    h3 {
+                        color: rgb(135, 13, 154);
+                    }
                 }
-                .inputs_signup{
+
+                .inputs_signup {
                     width: 75%;
                     height: 100%;
                     position: relative;
                     left: 50px;
                     display: grid;
                     grid-row: 3/8;
-                    input{
+
+                    input {
                         height: 40px;
                         outline: none;
                         border: none;
@@ -278,14 +302,116 @@
                         padding-left: 10px;
                         font-size: 1.05rem;
                         font-weight: bold;
+
                     }
-                    #submit{
+
+                    input:focus {
+                        outline: 1px solid rgb(135, 13, 154);
+                    }
+
+                    #submit {
                         color: white;
-                        background-color: rgb(14, 142, 70);
+                        margin-top: 30px;
+                        background-color: rgb(135, 13, 154);
                     }
                 }
             }
         }
     }
 
+}
+
+
+////////////////////////        templete Cards          ///////////////////////////////////////////////
+
+
+.template_cards {
+    
+    position: relative;
+    left: 50px;
+    top: 50px;
+    height: 1200px;
+    width: 1400px;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+
+    .first_row {
+        display: grid;
+        grid-row: 1/2;
+        grid-template-columns: repeat(3, 1fr);
+
+        .one,
+        .two,
+        .three {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid white;
+        }
+    }
+
+    .second_row {
+        display: grid;
+        grid-row: 2/3;
+        grid-template-columns: repeat(2, 1fr);
+
+        .four,
+        .five {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid white;
+        }
+        .card {
+            position: relative;
+            left: 50px;
+            top: 30px;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            width: 400px;
+            height: 500px;
+            background-color: yellow;
+        }
+        .four{
+            position: relative;
+            left: 250px;
+        }
+    }
+
+    .card {
+        position: relative;
+        left: 30px;
+        top: 30px;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        width: 400px;
+        height: 500px;
+        background-color: yellow;
+        border-radius: 5px;
+    }
+
+}
+
+////////////////////////        Footer          ///////////////////////////////////////////////
+
+
+.footer{
+    position: relative;
+    top :150px;
+    width: 100%;
+    height: 250px;
+    color: white;
+    background-color: rgb(34, 41, 44);
+}
+////////////////////////        How to          ///////////////////////////////////////////////
+
+.howto{
+    position: relative;
+    left: 150px;
+    width: 1200px;
+    height: 600px;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: rgb(169, 24, 176);
 }
