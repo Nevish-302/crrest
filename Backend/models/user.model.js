@@ -2,11 +2,11 @@ const mongoose = require(`mongoose`)
 const {Schema}  = mongoose;
 
 const userinfo = new Schema ({
-    username : {
+    Username : {
         type: String, 
         required: true,
         unique: true,
-        trim: true,
+        trim: true,         
         minlength:3,
     },
     passHash : {

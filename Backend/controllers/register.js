@@ -6,22 +6,20 @@ const User = require('../models/user.model')
 const register = (req, res) => {
     const {username, password} = req.body;
     const saltrounds = 10
-    const passhash = bcrypt.genSalt(saltrounds)
-    .then(salt => {
-        return bcrypt.hash(password, salt);
+    bcrypt.hash(password, saltrounds, (err, hash)=>{
+        console.log(`Hello Sir ${username, password}`)
+        console.log(hash);
+        const user = new User({Username: username, passHash: hash});
+        console.log(hash, username)
+        user.save()
+        .then(item => {
+          res.send("item saved to database");
+        })
+        .catch(err => {
+          res.status(400).send("unable to save to database");
+        });
     })
-    
-    const user = new User({username: username, passhash});
-    user.save((err, userName) =>{
-        if (err)
-        {
-            console.error(err);        
-        }
-        else
-        {
-            res.status(200).send('User has registered successfully');
-        }
-    })
+        
     
 }
 const registerpage = (req, res) => {
