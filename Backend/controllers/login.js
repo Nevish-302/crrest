@@ -6,14 +6,15 @@ const login = (req, res) => {
     User.findOne({Username: username}).then((id)=>
     {
         console.log(username, password)
-        if(id)
-        console.log(id)
-        else{
+        if(!id)
             res.status(400).json({ msg: "User not found" })
-        return }
+            
         bcrypt.compare(password, id.passHash, (err, data) => {
             if(err) console.log(err);
             if (data) {
+                req.session.isauth = true
+                req.session.user = username
+                console.log(req.session)
                 return res.status(200).json({ msg: "Login success" })
             } else {
                 return res.status(401).json({ msg: "Invalid credentials" })
@@ -23,7 +24,14 @@ const login = (req, res) => {
     
 }
 
-const loginpage = (req, res) => {
+const loginpage = (req, res) => {                
     res.status(200).send('Home');
 }
-module.exports = {login, loginpage}
+const logout = (req, res) => {
+    
+    req.session.isauth = false
+    req.session.user = null
+    console.log(req.session)            
+    res.status(200).send('Home');
+}
+module.exports = {login, logout, loginpage}
