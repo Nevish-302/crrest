@@ -35,7 +35,6 @@ const SignUp = () => {
 
             alert('A form was submitted with Name :"' + name + '"  and Email :"' + email + '"');
         }
-        e.preventDefault();
 
     }
 
@@ -59,7 +58,7 @@ const SignUp = () => {
 
                     <div className="access">
                         <header className="App-header">
-                            <form onSubmit={(e) => { handleSubmit(e) }}>
+                            <form action = "userauth/register" method = "POST" onSubmit={(e) => { handleSubmit(e) }}>
 
                                 <div className="main_access">
                                     <div className="register_navbar input_size">
@@ -68,13 +67,13 @@ const SignUp = () => {
                                     </div>
 
                                     <div className="inputs_signup">
-                                        <input className='input_size' type="text" value={name} placeholder="username" required onChange={(e) => { handleChange(e) }} /><br />
+                                        <input className='input_size' name="username" type="text" value={name} placeholder="username" required onChange={(e) => { handleChange(e) }} /><br />
 
 
                                         <input className='input_size' type="email" value={email} placeholder="Email id" required onChange={(e) => { handleEmailChange(e) }} /><br />
 
 
-                                        <input className='input_size' type="password" value={password} placeholder="Password" required onChange={(e) => { handlePasswordChange(e) }} /><br />
+                                        <input className='input_size' name="password" type="password" value={password} placeholder="Password" required onChange={(e) => { handlePasswordChange(e) }} /><br />
 
 
                                         <input className='input_size' type="password" value={confPassword} placeholder="Confirm Password" required onChange={(e) => { handleConfPasswordChange(e) }} /><br />

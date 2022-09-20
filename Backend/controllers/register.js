@@ -10,12 +10,11 @@ const register_p = async (req, res) => {
         const user = new User({Username: username, passHash: hash});
         user.save()
         .then(item => {
-          res.send(`${item} has registered successfully`);
-
+          console.log(`${item} has registered successfully`);
+          res.redirect('http://localhost:3000/');
         })
         .catch(err => {
-          res.status(400).send("unable to register", err);
-          res.redirect('/login/register')
+          console.log("unable to register", err);
         });
     })
         
