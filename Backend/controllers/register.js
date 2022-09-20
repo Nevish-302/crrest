@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt')
 const mongoose = require('mongoose')
 const User = require('../models/user.model')
 
-const register = async (req, res) => {
+const register_p = async (req, res) => {
     const {username, password} = await req.body;
     const saltrounds = 10
     bcrypt.hash(password, saltrounds, (err, hash)=>{
@@ -21,7 +21,7 @@ const register = async (req, res) => {
         
     
 }
-const registerpage = (req, res) => {
+const register_g = (req, res) => {
     res.status(200).send('Home');
 }
-module.exports = {register, registerpage}
+module.exports = {register_p, register_g}

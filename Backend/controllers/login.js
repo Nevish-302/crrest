@@ -1,7 +1,7 @@
 const express = require('express')
 const bcrypt = require('bcrypt')
 const User = require('../models/user.model')
-const login = (req, res) => {
+const login_p = (req, res) => {
     const {username, password} = req.body
     User.findOne({Username: username}).then((id)=>
     {
@@ -24,14 +24,8 @@ const login = (req, res) => {
     
 }
 
-const loginpage = (req, res) => {                
+const login_g = (req, res) => {                
     res.status(200).send('Home');
 }
-const logout = (req, res) => {
-    
-    req.session.isauth = false
-    req.session.user = null
-    console.log(req.session)            
-    res.status(200).send('Home');
-}
-module.exports = {login, logout, loginpage}
+
+module.exports = {login_p, login_g}

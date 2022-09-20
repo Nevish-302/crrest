@@ -1,5 +1,6 @@
 const express = require('express')
-const login = require(`./routes/logreg`)
+const auth = require(`./routes/userauth`)
+const form  = require('./routes/datamanip')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const bodyParser = require('body-parser')
@@ -34,8 +35,11 @@ app.get('/', (req, res)=>
 {
     res.status(200).send(`Home`);
 })
-app.use('/login', login)
+
+app.use('/userauth', auth)
+
+app.use('/form', form)
 
 app.listen(8080, ()=>{
-    console.log(`Server is listening on port 3000`)
+    console.log(`Server is listening on port 8080`)
 })
