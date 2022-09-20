@@ -7,7 +7,7 @@ const Header = (props) => {
     <>
     <nav className='navbar'>
       <div className="name">
-        <h2 id='naam'>AKASH</h2>
+        <h2 id='naam'>crrest</h2>
       </div>
       <div className="menu">
         <ul className='navbar-list' id='navbar-main-list'>
@@ -20,8 +20,11 @@ const Header = (props) => {
         <li className='navbar-list-items' id='contactbutton'>
           <Link to="/Contact" className={({ isActive }) => (isActive ? "link-active" : "link")}>Contacts</Link>
         </li> 
-        <li className='navbar-list-items' id='blogsbutton'>
-          <Link to="/Blog" className={({ isActive }) => (isActive ? "link-active" : "link")}>Blog</Link>
+        <li className='navbar-list-items' id='signinbutton'>
+          <Link to="/SignIn" className={({ isActive }) => (isActive ? "link-active" : "link")}>SignIn</Link>
+        </li> 
+        <li className='navbar-list-items' id='signupbutton'>
+          <Link to="/SignUp" className={({ isActive }) => (isActive ? "link-active" : "link")}>SignUp</Link>
         </li>           
         </ul>
       </div>

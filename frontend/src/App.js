@@ -9,8 +9,9 @@ import {
 import './App.scss';
 import Home from './Components/Home';
 import Howto from './Components/Howto';
-import Blog from './Components/Blog';
 import Contact from './Components/Contact';
+import SignIn from './Components/SignIn';
+import SignUp from './Components/SignUp'
 
 function App() {    
   return (
@@ -20,7 +21,8 @@ function App() {
           <Route exact path="/" element={<Home/>} />
           <Route path="/Howto" element={<Howto/>} />
           <Route path="/Contact" element={<Contact/>} />
-          <Route path="/Blog" element={<Blog/>} />
+          <Route path="/SignIn" element={<SignIn/>} />
+          <Route path="/SignUp" element={<SignUp/>} />
         </Routes>
       </Router>
     </div>
