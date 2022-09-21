@@ -8,14 +8,15 @@ const login_p = (req, res) => {
         console.log(username, password)
         if(!id)
             res.status(400).json({ msg: "User not found" })
-            
+            console.log(id)
         bcrypt.compare(password, id.passHash, (err, data) => {
             if(err) console.log(err);
             if (data) {
                 req.session.isauth = true
                 req.session.user = username
                 console.log(req.session)
-                return res.status(200).json({ msg: "Login success" })
+                console.log({ msg: "Login success" }, req.session)
+                res.status(200).redirect('http://localhost:3000/');
             } else {
                 return res.status(401).json({ msg: "Invalid credentials" })
             }
