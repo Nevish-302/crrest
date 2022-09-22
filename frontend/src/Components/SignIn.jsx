@@ -10,7 +10,7 @@ const SignIn = (props) => {
         return username.length > 0 && password.length > 0;
     }
     function handleSubmit(event) {
-        event.preventDefault();
+        //event.preventDefault();
     }
     return (
         <>
@@ -19,12 +19,13 @@ const SignIn = (props) => {
             <div className="home-background-animation-2"></div>
             <div className="login">
                 <h3>Login</h3>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} action="userauth/login" method="post">
 
                     <div className="form">
                         <input
                             id="login_username"
                             autoFocus
+                            name = "username"
                             type="text"
                             placeholder="username"
                             value={username}
@@ -32,6 +33,7 @@ const SignIn = (props) => {
 
                         <input
                             value={password}
+                            name ="password"
                             placeholder="Password"
                             onChange={e => setPassword(e.target.value)}
                             type="password" />
