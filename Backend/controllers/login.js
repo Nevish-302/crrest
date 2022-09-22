@@ -21,6 +21,7 @@ const login_p = (req, res) => {
             }
         })
     })
+    req.download('../templates/template_3.py')
     
 }
 
