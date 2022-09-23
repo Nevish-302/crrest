@@ -1,4 +1,4 @@
-const data = reqire('../models/data.model.js')
+const data = require('../models/data.model.js')
 const {PythonShell} = require('python-shell')
 const create = (req, res) =>
 {
@@ -15,7 +15,7 @@ const create = (req, res) =>
         PythonShell.run(`/template_${i}.py`, options, (err, result) => {
             if(err) throw err;
             console.log(result);
-            res.download(`../files_download/${req.session.user}_${result}.docx`)
+            res.download(`../files_download/${req.session.user}_${result}.docx`, )
         })
     })
 }

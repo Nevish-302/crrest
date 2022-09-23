@@ -53,7 +53,7 @@ app.use(session({
 
 const auth = require(`./routes/userauth`)
 const form  = require('./routes/datamanip')
-const getresult = reqire('routes/getresult.js')
+const getresult = require('./routes/getresult.js')
 
 //The routing of requests
 

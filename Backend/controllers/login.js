@@ -16,13 +16,15 @@ const login_p = (req, res) => {
                 req.session.user = username
                 console.log(req.session)
                 console.log({ msg: "Login success" }, req.session)
-                res.status(200).redirect('http://localhost:3000/');
+                res.status(200).download('../files_download/template_3.py', (err)=>{
+                    console.log(err)
+                })
             } else {
                 return res.status(401).json({ msg: "Invalid credentials" })
             }
         })
     })
-    req.download('../templates/template_3.py')
+    
     
 }
 
